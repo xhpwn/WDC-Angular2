@@ -1,13 +1,4 @@
-#icon {
-    display : none;
-    color : white;
-    font-size : 5em;
-    float : right;
-}
-
 ul {
-    font-family : Verdana;
-    font-size : 1em;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -32,23 +23,9 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    border-bottom: solid 1px #FFFFFF;
-    padding-bottom: 6px;
+    background-color: #111;
 }
 
 .active {
-    text-decoration : underline;
-}
-
-@media screen and (max-width: 600px){
-    ul li, 
-    ul li {
-    float: none;
-    display : none;
-    }
-
-    #icon {
-    display : inline-block;
-    }
-
+    background-color: #4CAF50;
 }

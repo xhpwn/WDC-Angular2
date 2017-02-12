@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-background-color : #5b5487;
+html {
+    background-image: url("app/image/background.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-color : black;
 }
