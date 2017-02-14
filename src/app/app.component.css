@@ -1,54 +1,11 @@
-#icon {
-    display : none;
-    color : white;
-    font-size : 5em;
-    float : right;
-}
-
-ul {
-    font-family : Verdana;
-    font-size : 1em;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000000;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-li {
-    float: right;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-    border-bottom: solid 1px #FFFFFF;
-    padding-bottom: 6px;
-}
-
 .active {
-    text-decoration : underline;
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: white;
 }
 
-@media screen and (max-width: 600px){
-    ul li, 
-    ul li {
-    float: none;
-    display : none;
-    }
-
-    #icon {
-    display : inline-block;
-    }
-
+@media only screen and (min-width: 768px) {
+#example-1 {
+  float: right;
+}
 }
