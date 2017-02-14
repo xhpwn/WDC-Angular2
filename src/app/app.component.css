@@ -1,4 +1,15 @@
+.navimage {
+  height: inherit;
+  width: inherit;
+}
+
 .active {
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: white;
+}
+
+.links a:hover{
   border-width: 0 0 1px;
   border-style: solid;
   border-color: white;
