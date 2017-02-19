@@ -1,0 +1,23 @@
+#section01 {
+  padding-top: 55px;
+}
+
+.heading {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.subtext {
+  padding-top: 3%;
+  font-size: 1.5em;
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+}
+
+.trimg {
+  background-image: url('app/image/people/anubhav.jpg');
+  max-width: 100%;
+  margin: auto;
+  height: 300px;
+}
