@@ -1,0 +1,44 @@
+.header {
+    text-align: center;
+    padding-top: 80px;
+    font-size: 2.5em;
+}
+
+.questions {
+    text-align: center;
+    padding-top: 40px;
+    max-width: 70%;
+    margin: auto;
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.answers {
+    text-align: center;
+    max-width: 70%;
+    margin: auto;
+    font-size: 1.5em;
+}
+
+#section04 {
+  background-color: black;
+  height: 6vh;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.footer {
+  font-size: 1em;
+  position: relative;
+  padding: 1.9vh;
+  color: #bfbfbf;
+}
+
+.footer a:hover {
+  color: #bfbfbf;
+  text-decoration: none;
+}
+
+#footerimg {
+  height: 22px;
+}

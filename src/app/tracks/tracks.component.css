@@ -1,5 +1,19 @@
 #section01 {
-  padding-top: 55px;
+  padding-top: 80px;
+  padding-bottom: 5%;
+  background-color:#a9a9a9;
+}
+
+#section02 {
+  padding-top: 25px;
+  padding-bottom: 5%;
+  background-color:#d6d6d6;
+}
+
+#section03 {
+  padding-top: 25px;
+  padding-bottom: 5%;
+  background-color:white;
 }
 
 .heading {
@@ -11,13 +25,51 @@
   padding-top: 3%;
   font-size: 1.5em;
   text-align: center;
-  max-width: 80%;
+  max-width: 70%;
+  margin: auto;
+}
+
+.subtext2 {
+  padding-top: 3%;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.pic {
+  max-width: 100%;
+  margin: auto;
+}
+
+.pic2 {
+  max-width: 50%;
   margin: auto;
 }
 
 .trimg {
-  background-image: url('app/image/people/anubhav.jpg');
   max-width: 100%;
-  margin: auto;
-  height: 300px;
+  height: auto;
+}
+
+.imgsub {
+  padding-top: 3%;
+  font-weight: bold;
+}
+
+.imgsub2 {
+  font-size: 0.8em;
+}
+
+.content {
+  text-align: left;
+}
+
+.topics {
+  text-align: left;
+  padding-top: 50px;
+  font-weight: bold;
+}
+
+.about {
+  text-align: left;
+  font-weight: bold;
 }

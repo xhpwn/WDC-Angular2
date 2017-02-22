@@ -11,10 +11,10 @@
     </div>
     <div class="collapse navbar-collapse" id="icon">
       <ul class="nav navbar-nav">
-        <li class="links active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-        <li class="links"><a href="#">Tracks</a></li>
-        <li class="links"><a href="#">Calendar</a></li>
-        <li class="links"><a href="#">FAQ</a></li>
+        <li routerLinkActive="active" class="links"><a [routerLink]="['/home']">Home<span class="sr-only">(current)</span></a></li>
+        <li routerLinkActive="active" class="links"><a [routerLink]="['/tracks']">Tracks</a></li>
+        <li routerLinkActive="active" class="links"><a [routerLink]="['/calendar']">Calendar</a></li>
+        <li routerLinkActive="active" class="links"><a [routerLink]="['/faq']">FAQ</a></li>
         <li class="links"><a href="mailto:wdc@purdue.edu"><img src="app/image/email.png" class="navsocial"></a></li>
         <li class="links"><a href="https://www.facebook.com/groups/722867181083626/" target="_blank"><img src="app/image/facebook.png" class="navsocial"></a></li>
         <li class="links"><a href="http://twitter.com/purduewebdev" target="_blank"><img src="app/image/twitter.png" class="navsocial"></a></li>

@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TracksComponent } from './tracks/tracks.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { AppRoutingModule } from './app.routing';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AppRoutingModule } from './app.routing';
     HomeComponent,
     NavbarComponent,
     TracksComponent,
-    CalendarComponent
+    CalendarComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
