@@ -1,0 +1,475 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Client-Side Routing · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../meeting-6/intro-rxjs.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../meeting-1/meeting-1.html">
+            
+                <a href="../meeting-1/meeting-1.html">
+            
+                    
+                    Introduction & Build Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../meeting-2/intro-ts.html">
+            
+                <a href="../meeting-2/intro-ts.html">
+            
+                    
+                    Introduction to TypeScript & Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../meeting-3/intro-angular.html">
+            
+                <a href="../meeting-3/intro-angular.html">
+            
+                    
+                    Introduction to Angular 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../meeting-4/components-advanced.html">
+            
+                <a href="../meeting-4/components-advanced.html">
+            
+                    
+                    Complex Angular components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../meeting-5/services-propagation.html">
+            
+                <a href="../meeting-5/services-propagation.html">
+            
+                    
+                    Propagation of data and Intro to Services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../meeting-6/intro-rxjs.html">
+            
+                <a href="../meeting-6/intro-rxjs.html">
+            
+                    
+                    Observables & HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Client-Side Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Client-Side Routing</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="client-side-routing">Client-Side Routing</h1>
+<p>There&apos;s server-side routing where the server handles endpoints (requests made by the client). 
+We wrote some of this before in Node.js. </p>
+<p>You also can have client-side routing.</p>
+<h2 id="what-is-client-side-routing">What is Client-Side Routing?</h2>
+<p>Routing that the client handles. Instead of handling API requests, the client will realize the address has changed and change html templates accordingly. </p>
+<p>For example, if you typed in /characters/1, then either your server will realize that&apos;s an API request, or it will realize it&apos;ll let the client handle the routing. </p>
+<h2 id="client-side-routing-vs-server-side-routing">Client-Side Routing vs Server-Side Routing</h2>
+<p>Client-Side Routing deals with more of changing around HTML templates in the page. You could have a layout that looks like:</p>
+<pre><code>---------------------------
+-HOME--CHARACTERS----------
+---------------------------
+---------------------------
+-------TEMPLATE------------
+---------------------------
+---------------------------
+---------------------------
+</code></pre><p>The part where <code>HOME--CHARACTERS</code> is, that&apos;s where the navbar is. When you have your browser open, that part will not change upon url change.
+TEMPLATE will be replaced. </p>
+<p>For example, let&apos;s say we have the url&apos;s <code>/characters/1</code> and <code>/characters/2</code>.
+We could set up our routing so that the TEMPLATE part of the page would change based on the URL. This allows you to interchange components on URL change.</p>
+<h2 id="why-client-side-routing">Why Client-Side Routing?</h2>
+<ul>
+<li>Load resources once only</li>
+<li>Faster web pages and client experience</li>
+<li>Less requests to the server required</li>
+<li>Separation of concerns between server and client</li>
+</ul>
+<h3 id="how">HOW??</h3>
+<p>Let&apos;s do this the easy way and continue from our last project.</p>
+<ol>
+<li>Import <code>RouterModule from &apos;@angular/router&apos;;</code> and add it to your list of module imports</li>
+<li>Create a <code>CharactersComponent</code> and then move all of the data retrieval and template from <code>AppComponent</code> to <code>CharactersComponent</code></li>
+<li>When importing <code>RouterModule</code><pre><code class="lang-typescript">...
+RouterModule.forRoot([
+ { path: <span class="hljs-string">&apos;&apos;</span>, component: CharactersComponent, pathMatch: <span class="hljs-string">&apos;full&apos;</span> }
+ <span class="hljs-comment">/* When the full part of the url matches &apos;&apos;, then the CharactersComponent will load in the top level router-outlet */</span>
+])
+...
+</code></pre>
+</li>
+<li>Add a <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code> to your app.component.html</li>
+</ol>
+<p>This is where your template will be swapped out from.</p>
+<h3 id="another-route">Another Route!</h3>
+<p>What if we wanted to have a detailed view into each character? So when we go to <code>/character/1</code> we get <code>Harry Potter</code> and then if it&apos;s a different url, a different character will be shown?</p>
+<p>Let&apos;s create a <code>CharacterDetail</code> component. <code>ng g component CharacterDetail</code>. Then, add it to the list of routes:</p>
+<pre><code class="lang-typescript">...
+RouterModule.forRoot([
+    { path: <span class="hljs-string">&apos;&apos;</span>, component: CharactersComponent, pathMatch: <span class="hljs-string">&apos;full&apos;</span> },
+    { path: <span class="hljs-string">&apos;character/:id&apos;</span>, component: CharacterDetailComponent }
+    <span class="hljs-comment">/* When the full part of the url matches &apos;&apos;, then the CharactersComponent will load in the top level router-outlet */</span>
+])
+</code></pre>
+<p>So, we want to get the data based on what id was chosen, right? But there&apos;s no way to signify who was chosen except for by the name right? Let&apos;s have it so that when you click on the character&apos;s image, you direct the user to the detail page of that character.</p>
+<ol>
+<li>Add a <code>(click)</code> attribute to your <code>&lt;img&gt;</code> that passes the current character to your method</li>
+<li>Create a click that lets us redirect the user to <code>/character/name_of_person_separated_by_</code><pre><code class="lang-typescript"><span class="hljs-keyword">constructor</span>(private characterService: CharacterService, private router: Router) {
+ <span class="hljs-keyword">this</span>.characters = <span class="hljs-keyword">this</span>.characterService.getCharacters();
+}
+selectCharacter(character) {
+ <span class="hljs-keyword">this</span>.router.navigate([<span class="hljs-string">&apos;/character&apos;</span>, character.name.replace(<span class="hljs-regexp">/\s/g</span>, <span class="hljs-string">&apos;_&apos;</span>)]); <span class="hljs-comment">// replaces all &apos; &apos; with _</span>
+}
+</code></pre>
+So, this should redirect you to <code>/character/harry_potter</code> if you click on the image of <code>Harry Potter</code>.</li>
+</ol>
+<p>Let&apos;s set up the API to return the specific character you asked for:</p>
+<ol>
+<li>Create a getCharacter method that accepts a name as a string</li>
+<li>Add spaces to where the <code>_</code> are in the name</li>
+<li>Make a request to <code>getCharacters</code> and filter by only the name that was given</li>
+</ol>
+<pre><code class="lang-typescript">getCharacter(id: <span class="hljs-built_in">string</span>) {
+    <span class="hljs-keyword">let</span> name = id.replace(<span class="hljs-regexp">/_/g</span>, <span class="hljs-string">&apos; &apos;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getCharacters().map(characters =&gt; characters.find(character =&gt; character.name === name));
+}
+</code></pre>
+<p>First, we use regex to replace all instances of <code>_</code> with spaces.</p>
+<p>Then, we map the result of the <code>getCharacters</code> observable to the result of <code>find</code> on the entire array. If the id is correct, the correct info will be returned.</p>
+<p><strong>Note: <code>find</code> returns the first object to match your criteria. We use <code>find</code> instead of <code>filter</code> because <code>find</code> returns an object not an array</strong></p>
+<h3 id="adding-information-to-the-character">Adding information to the character</h3>
+<p>Let&apos;s get this info from the method. In <code>ngOnInit()</code> let&apos;s make a call to the service.</p>
+<p>Let&apos;s inject <code>Route</code> and some other classes into the constructor</p>
+<pre><code class="lang-typescript">  <span class="hljs-keyword">constructor</span>(private route: ActivatedRoute, private router: Router, private characterService: CharacterService) { }
+</code></pre>
+<p>The <code>Router</code> is to navigate to other URL&apos;s. <code>ActivatedRoute</code> is the current route that we are at. We can use this to get the parameters as well (our id).</p>
+<p><code>this.route.paramMap</code> returns the list of parameters as an observable, so all we have to do is resolve that and map the observable to the one that gets the character inside the <code>CharacterService</code></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">this</span>.character = <span class="hljs-keyword">this</span>.route.paramMap.switchMap((params: ParamMap) =&gt; <span class="hljs-keyword">this</span>.characterService.getCharacter(params.get(<span class="hljs-string">&apos;id&apos;</span>)));
+</code></pre>
+<p><strong>Note: switchMap switches an observable from one to another</strong></p>
+<h3 id="adding-to-the-template">Adding to the template</h3>
+<p>Let&apos;s add some info to the detail component.
+Before we get started, you need to understand the elvis operator <code>?</code>, this is helpful if the object you want isn&apos;t available yet. 
+This is important to us because we want to get the character&apos;s name, but the browser still might be waiting for a response from the server. If we don&apos;t use this operator, we&apos;ll be asking for a property of <code>name</code> from undefined. </p>
+<p>By using the elvis operator, we are able to tell Angular &quot;if this exists, I want the <code>name</code> property of the object.</p>
+<p>So, let&apos;s add the title of the character</p>
+<pre><code class="lang-html">
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-title&quot;</span>&gt;</span> {{ (character | async)?.name}} <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+</code></pre>
+<p><strong>Note: you need to have parentheses around your expression that you want to get the object from. Because we want <code>name</code> from the result of the <code>async</code> pipe, we have parentheses around the <code>character | async</code></strong></p>
+<h2 id="workshop">Workshop</h2>
+<ul>
+<li>Do the same to fill in the rest of the <code>Character Detail</code></li>
+</ul>
+<h2 id="bonus---resolvers">BONUS - Resolvers</h2>
+<h3 id="what-is-a-resolver">What is a resolver?</h3>
+<p>Sometimes you want to get the data before you go to a route. We want this because we get errors that we are trying to get <code>null.jpg</code> since there&apos;s a delay between us sending the request, and receiving it, and the template rendering.</p>
+<p>Essentially, a resolver is basically just a service that gets data before a route loads so you know that when a component is loaded, all the data has been loaded as well.</p>
+<h3 id="getting-started">Getting started</h3>
+<ol>
+<li>Create a service <code>CharacterResolverService</code></li>
+<li><code>implement</code> <code>Resolve&lt;any&gt;</code></li>
+<li>inject <code>CharacterService</code></li>
+<li>Create a <code>resolve</code> method, and add <code>ActivatedRouteSnapshot</code> and <code>RouterStateSnapshot</code></li>
+<li>in resolve, get the id
+<code>let id = route.params[&apos;id&apos;];</code></li>
+<li>Return the result of the character service
+<code>return this.characterService.getCharacter(id);</code></li>
+</ol>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Injectable } from <span class="hljs-string">&apos;@angular/core&apos;</span>;
+<span class="hljs-keyword">import</span> { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from <span class="hljs-string">&apos;@angular/router&apos;</span>;
+
+<span class="hljs-keyword">import</span> { CharacterService } from <span class="hljs-string">&apos;../character.service&apos;</span>;
+@Injectable()
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> CharacterResolverService <span class="hljs-keyword">implements</span> Resolve&lt;<span class="hljs-built_in">any</span>&gt; {
+    <span class="hljs-keyword">constructor</span>(private characterService: CharacterService) {
+
+    }
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) { 
+        <span class="hljs-keyword">let</span> id = route.params[<span class="hljs-string">&apos;id&apos;</span>];
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.characterService.getCharacter(id);
+    }
+}
+</code></pre>
+<p>Now our data is in the route, so let&apos;s </p>
+<ol>
+<li>Tell the router to use our resolver</li>
+<li>Get the data from the router</li>
+</ol>
+<h3 id="telling-router-to-use-our-resolver">Telling router to use our resolver</h3>
+<ol>
+<li>add the service to the <code>providers</code> array</li>
+<li>add <code>resolver: { character: CharacterResolverService }</code></li>
+</ol>
+<h3 id="getting-data-from-router">Getting data from router</h3>
+<ol>
+<li>Change the type of your character member variable to <code>any[]</code></li>
+<li>Get the data from <code>this.route.data</code></li>
+</ol>
+<p>We know that the data is in an object called <code>data</code> with the property <code>character</code>.
+All we have to do is subscribe, get the data, and set our character member variable to that <code>data.character</code></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> CharacterDetailComponent <span class="hljs-keyword">implements</span> OnInit {
+
+  character:  <span class="hljs-built_in">any</span>[];
+  <span class="hljs-keyword">constructor</span>(private route: ActivatedRoute, private router: Router, private characterService: CharacterService) { }
+
+  ngOnInit() {
+    <span class="hljs-keyword">this</span>.route.data.subscribe(data =&gt; <span class="hljs-keyword">this</span>.character = data.character);
+  }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../meeting-6/intro-rxjs.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Observables & HTTP">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Client-Side Routing","level":"1.8","depth":1,"previous":{"title":"Observables & HTTP","level":"1.7","depth":1,"path":"meeting-6/intro-rxjs.md","ref":"meeting-6/intro-rxjs.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"meeting-7/routing.md","mtime":"2017-09-02T16:29:23.808Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-20T18:06:21.778Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -31,3 +31,6 @@
   float: right;
 }
 }
+.navbar-fixed-top .navbar-collapse {
+  max-height: none;
+}

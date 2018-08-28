@@ -1,0 +1,14 @@
+{
+  "name": "meeting-4",
+  "version": "1.0.0",
+  "description": "Meeting 4 node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maneesh Tewani <maneesh.tewani@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}

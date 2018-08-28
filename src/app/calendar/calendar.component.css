@@ -18,7 +18,6 @@
 }
 
 #info {
-  height: 6vh;
   text-align: center;
   width: 100%;
   margin-top: 5%;
@@ -27,28 +26,4 @@
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 8%;
-}
-
-#section04 {
-  background-color: black;
-  height: 6vh;
-  text-align: center;
-  width: 100%;
-}
-
-.footer {
-  font-size: 1em;
-  position: relative;
-  padding: 1.9vh;
-  color: #bfbfbf;
-}
-
-.footer a:hover {
-  color: #bfbfbf;
-  text-decoration: none;
-}
-
-#footerimg {
-  height: 22px;
 }

@@ -1,0 +1,484 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Observables & HTTP · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../meeting-7/routing.html" />
+    
+    
+    <link rel="prev" href="../meeting-5/services-propagation.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../meeting-1/meeting-1.html">
+            
+                <a href="../meeting-1/meeting-1.html">
+            
+                    
+                    Introduction & Build Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../meeting-2/intro-ts.html">
+            
+                <a href="../meeting-2/intro-ts.html">
+            
+                    
+                    Introduction to TypeScript & Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../meeting-3/intro-angular.html">
+            
+                <a href="../meeting-3/intro-angular.html">
+            
+                    
+                    Introduction to Angular 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../meeting-4/components-advanced.html">
+            
+                <a href="../meeting-4/components-advanced.html">
+            
+                    
+                    Complex Angular components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../meeting-5/services-propagation.html">
+            
+                <a href="../meeting-5/services-propagation.html">
+            
+                    
+                    Propagation of data and Intro to Services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="intro-rxjs.html">
+            
+                <a href="intro-rxjs.html">
+            
+                    
+                    Observables & HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../meeting-7/routing.html">
+            
+                <a href="../meeting-7/routing.html">
+            
+                    
+                    Client-Side Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Observables & HTTP</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="observables--http">Observables &amp; HTTP</h1>
+<p>So, you probably have heard of Promises, right? Well, Observables are kind of like Promises, but on steroids!</p>
+<h2 id="what-is-an-observable">What is an Observable?</h2>
+<p>An Observable is pretty much an asynchronous stream, and each item in the stream is due to some event emitting some value.</p>
+<p>Observables are currently a part of Reactive Extensions (RxJS).</p>
+<h3 id="what-is-reactive-programming">What is Reactive Programming?</h3>
+<p>Reactive Programming is event-driven programming. Everything is basically part of a stream.</p>
+<h3 id="why-is-it-better-than-a-promise">Why is it better than a promise?</h3>
+<ol>
+<li>Promises are <strong>not</strong> lazy.<ul>
+<li>In other words, the moment you create a promise, it has started to run. Observables <strong>are</strong> lazy; they only start executing when you tell them to.</li>
+</ul>
+</li>
+<li>You can&apos;t really retry promises<ul>
+<li>Say your promise fails, you can&apos;t just tell it to re-run the promise. You can with Observables</li>
+</ul>
+</li>
+<li>Promises are one-and-done<ul>
+<li>Say you&apos;re interacting with a click event. With a promise, you wouldn&apos;t be able to &quot;listen&quot; on every event.</li>
+</ul>
+</li>
+<li>You can&apos;t chain <code>operators</code> with promises<ul>
+<li>What if you wanted to write an application that only wants to check every two events. You can do that with Observables since they&apos;re pretty much streams. You can use operators with these streams such as <code>filter</code>, <code>map</code>, <code>flatMap</code>, etc.</li>
+</ul>
+</li>
+</ol>
+<h3 id="example">Example</h3>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> source = someAsyncTask(); 
+<span class="hljs-comment">/* 
+    Let&apos;s say this returns:
+    {
+        empName: &quot;Maneesh&quot;,
+        role: &quot;Manager&quot;
+    },
+    {
+        empName: &quot;Bob&quot;,
+        role: &quot;Software Engineer&quot;
+    }
+*/</span>
+
+<span class="hljs-keyword">const</span> observable = source.filter(employee =&gt; employee.role === <span class="hljs-string">&quot;Manager&quot;</span>);
+observable.subscribe(list =&gt; <span class="hljs-built_in">console</span>.log(list)); <span class="hljs-comment">//will fire every time an event goes off.</span>
+<span class="hljs-comment">// The above results in just { empName: &quot;Maneesh&quot;, rol: &quot;Manager&quot; }</span>
+observable.map(employee =&gt; employee.empName); <span class="hljs-comment">// Returns &quot;Maneesh&quot;</span>
+</code></pre>
+<p>Can you do that with promises? Yes, but it&apos;s very difficult. </p>
+<p>When would you want to have multiple events? One example would be:
+Taken from <a href="https://github.com/Reactive-Extensions/RxJS" target="_blank">Rxjs&apos;s GitHub</a></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> $input = $(<span class="hljs-string">&apos;#input&apos;</span>);
+<span class="hljs-keyword">const</span> $results = $(<span class="hljs-string">&apos;#results&apos;</span>);
+
+<span class="hljs-comment">/* Only get the value from each key up */</span>
+<span class="hljs-keyword">var</span> keyups = Rx.Observable.fromEvent($input, <span class="hljs-string">&apos;keyup&apos;</span>)
+  .pluck(<span class="hljs-string">&apos;target&apos;</span>, <span class="hljs-string">&apos;value&apos;</span>)
+  .filter(text =&gt; text.length &gt; <span class="hljs-number">2</span> );
+
+<span class="hljs-comment">/* Now debounce the input for 500ms */</span>
+<span class="hljs-keyword">var</span> debounced = keyups
+  .debounce(<span class="hljs-number">500</span> <span class="hljs-comment">/* ms */</span>);
+
+<span class="hljs-comment">/* Now get only distinct values, so we eliminate the arrows and other control characters */</span>
+<span class="hljs-keyword">var</span> distinct = debounced
+  .distinctUntilChanged();
+</code></pre>
+<p>Also, note that the main reason behind observables is the different operations that can be done to observables. This makes life a lot easier than using Promises.</p>
+<p>Basically, you&apos;re able to do a lot of things to do in asynchronous objects/streams.</p>
+<h3 id="how-does-this-work">How does this work?</h3>
+<ol>
+<li>Observables are streams
+-----1---2----3--------4------5------6----------7--&gt;</li>
+<li>The stream emits events (events 1-7 above)</li>
+<li>Perform operations</li>
+<li>Observables don&apos;t work, until you do <code>subscribe</code>
+<code>observable.subscribe(event =&gt; console.log(event)); // Prints out events emmitted by observable</code>
+<strong>Note: Each operator used on an observable creates a new observable</strong>
+Example:<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> observable1 = httpRequest$;
+<span class="hljs-keyword">let</span> observable2 = observable1.filter(data =&gt; data.type === <span class="hljs-number">3</span>);
+observable1.subscribe(data =&gt; <span class="hljs-built_in">console</span>.log(data)); <span class="hljs-comment">// Has all data</span>
+observable2.subscribe(data =&gt; <span class="hljs-built_in">console</span>.log(data)); <span class="hljs-comment">// Has only filtered data</span>
+</code></pre>
+</li>
+</ol>
+<h2 id="what-about-observables-and-angular-4">What about Observables and Angular 4?</h2>
+<p>Well, let&apos;s create a new project called <code>hp-characters</code>
+<code>ng new hp-characters</code></p>
+<p>Let&apos;s create a new service called <code>Character</code>
+<code>ng g service character</code></p>
+<ul>
+<li>Add <code>CharacterService</code> to your list of <code>providers</code></li>
+<li>Create a getCharacters() method</li>
+<li>Inside add:
+```typescript
+import { Http } from &apos;@angular/http&apos;;
+import &apos;rxjs/add/operator/map&apos;;
+...
+constructor(private http: Http) {</li>
+</ul>
+<p>}
+getCharacters() {
+    return this.http.get(&apos;<a href="http://hp-api.herokuapp.com/api/characters&apos;).map(response" target="_blank">http://hp-api.herokuapp.com/api/characters&apos;).map(response</a> =&gt; response.json()); // Map the payload of the observable to be the actual data
+}</p>
+<pre><code>* Let&apos;s use it in our app now!
+```typescript
+/* AppComponent */
+...
+import { CharacterService } from &apos;./character.service&apos;;
+...
+characters: Observable&lt;any&gt;;
+constructor(private characterService: CharacterService) {
+    this.characters = this.characterService.getCharacters();
+}
+</code></pre><pre><code class="lang-html"><span class="hljs-comment">&lt;!--app.component.html--&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span> {{ characters | async | json }} <span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+</code></pre>
+<h3 id="the-async-filterpipe">The Async Filter/Pipe</h3>
+<p>In our templates, we can use <code>pipes/filters</code> to transform our template to adhere to some standard. For example, if we want to transform our
+numbers to be humanly readable, we can use the <code>currency</code> pipe.
+In our case, we want to use an observable in our template without unwrapping the observable. So, we use the <code>async</code> pipe.</p>
+<p><strong>Note: You can use multiple pipes together like the above</strong>
+We pipe <code>async</code> then <code>json</code>. So, first Angular unwraps the observable <code>characters</code>, then sends the unwrapped data to the next pipe, <code>json</code>.
+Pipes always go from left to right.</p>
+<h3 id="things-without-the-async-pipe">Things without the async pipe</h3>
+<pre><code class="lang-typescript"><span class="hljs-comment">/* AppComponent */</span>
+...
+characters: <span class="hljs-built_in">any</span>[];
+<span class="hljs-keyword">constructor</span>() {
+    ...
+    <span class="hljs-keyword">this</span>.characterService.getCharacters().subscribe(characters =&gt; <span class="hljs-keyword">this</span>.characters = characters);
+}
+</code></pre>
+<p>The above gets the observable for the HTTP Request, then when an event has been emitted, it sets the <code>this.characters</code> to the result.</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--app.component.html--&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span> {{characters | json }} <span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+</code></pre>
+<h3 id="ngclass">NgClass</h3>
+<p>We can conditionally apply classes to our elements by using the directive <code>NgClass</code>. <code>NgClass</code> uses your logic to determine what class to use. 
+You just need to make sure you return the right one.
+For example, if I had a series of game of thrones characters and I wanted to change the colors of those who are dead, then you would use something like:
+<code>[ngClass]=&quot;{ &apos;dead&apos;: !character.alive }</code>
+<code>dead</code> is the class name. <code>!character.alive</code> is the condition on which to check to determine whether the class should be applied or not.
+or, if I had a ternary operator
+<code>[ngClass]=&quot;character.alive ? &apos;alive&apos; : &apos;dead&apos;&quot;</code></p>
+<p><strong>Note how I used quotes around <code>alive</code> and <code>dead</code>. If I didn&apos;t, Angular would have tried to evaluate and find both of those variables and use their result as the class name</strong></p>
+<h2 id="using-bootstrap">Using Bootstrap</h2>
+<ol>
+<li><code>npm install bootstrap --save</code></li>
+<li>Open styles.css and add <code>@import &apos;~bootstrap/dist/css/bootstrap.css&apos;;</code></li>
+<li>Start using bootstrap!
+<strong>Note: I am using bootstrap 4.0.0-beta, to install this use <code>npm install bootstrap@4.0.0-beta</code></strong></li>
+<li>To use javascript you can:<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;jquery&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;bootstrap&apos;</span>; <span class="hljs-comment">// import all of bootstrap&apos;s js</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;bootstrap/js/dist/util&apos;</span>; <span class="hljs-comment">// import a specific util</span>
+</code></pre>
+And install jquery <code>npm install --save jquery</code></li>
+</ol>
+<h2 id="workshop">Workshop</h2>
+<ul>
+<li>Iterate over the list of characters and show each character&apos;s name and house</li>
+<li>Display each character&apos;s image</li>
+<li>Change the style of each character who is dead vs alive</li>
+<li>BONUS: Change the style of each character to match their house</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../meeting-5/services-propagation.html" class="navigation navigation-prev " aria-label="Previous page: Propagation of data and Intro to Services">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../meeting-7/routing.html" class="navigation navigation-next " aria-label="Next page: Client-Side Routing">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Observables & HTTP","level":"1.7","depth":1,"next":{"title":"Client-Side Routing","level":"1.8","depth":1,"path":"meeting-7/routing.md","ref":"meeting-7/routing.md","articles":[]},"previous":{"title":"Propagation of data and Intro to Services","level":"1.6","depth":1,"path":"meeting-5/services-propagation.md","ref":"meeting-5/services-propagation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"meeting-6/intro-rxjs.md","mtime":"2017-08-31T15:59:10.101Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-20T18:06:21.778Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

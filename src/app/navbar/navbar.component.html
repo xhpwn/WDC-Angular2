@@ -1,24 +1,39 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid" style="background-color: black">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#icon" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><img src="app/image/logo.png" class="navimage">Purdue Web Dev Club</a>
+      <a class="navbar-brand" href="#">
+<img
+          sizes="(max-width: 1092px) 100vw, 1092px"
+          srcset="
+          /assets/image/logo-223x.png 223w,
+          /assets/image/logo-446x.png 446x,
+          /assets/image/logo-670x.png 670x,
+          /assets/image/logo-893x.png 893x,
+          /assets/image/logo-1116x.png 1116x"
+          src="/assets/image/people/logo-1116x.png"
+          class="navimage"
+          alt="">
+        Purdue Web Dev Club</a>
     </div>
-    <div class="collapse navbar-collapse" id="icon">
+    <div class="collapse navbar-collapse" id="icon" [collapse]="isCollapsed">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active" class="links"><a [routerLink]="['/home']">Home<span class="sr-only">(current)</span></a></li>
         <li routerLinkActive="active" class="links"><a [routerLink]="['/tracks']">Tracks</a></li>
         <li routerLinkActive="active" class="links"><a [routerLink]="['/calendar']">Calendar</a></li>
+        <li routerLinkActive="active" class="links"><a href="https://quiz.purduewebdev.club">Quiz</a></li>
+        <li class="links"><a href="/assets/_book_beginner/index.html">Beginner Gitbook</a></li>
+        <li class="links"><a href="/assets/_book_advanced/index.html">Advanced Gitbook</a></li>
         <li routerLinkActive="active" class="links"><a [routerLink]="['/faq']">FAQ</a></li>
-        <li class="links"><a href="mailto:wdc@purdue.edu"><img src="app/image/email.png" class="navsocial"></a></li>
-        <li class="links"><a href="https://www.facebook.com/groups/722867181083626/" target="_blank"><img src="app/image/facebook.png" class="navsocial"></a></li>
-        <li class="links"><a href="http://twitter.com/purduewebdev" target="_blank"><img src="app/image/twitter.png" class="navsocial"></a></li>
-        <li class="links"><a href="http://instagram.com/purduewebdevclub" target="_blank"><img src="app/image/instagram.png" class="navsocial"></a></li>
+        <li class="links"><a href="mailto:wdc@purdue.edu"><img src="assets/image/email.png" class="navsocial"></a></li>
+        <li class="links"><a href="https://www.facebook.com/groups/722867181083626/" target="_blank"><img src="assets/image/facebook.png" class="navsocial"></a></li>
+        <li class="links"><a href="http://twitter.com/purduewebdev" target="_blank"><img src="assets/image/twitter.png" class="navsocial"></a></li>
+        <li class="links"><a href="http://instagram.com/purduewebdevclub" target="_blank"><img src="assets/image/instagram.png" class="navsocial"></a></li>
       </ul>
     </div>
   </div>

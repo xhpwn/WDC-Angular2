@@ -1,0 +1,413 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Complex Angular components · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../meeting-5/services-propagation.html" />
+    
+    
+    <link rel="prev" href="../meeting-3/intro-angular.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../meeting-1/meeting-1.html">
+            
+                <a href="../meeting-1/meeting-1.html">
+            
+                    
+                    Introduction & Build Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../meeting-2/intro-ts.html">
+            
+                <a href="../meeting-2/intro-ts.html">
+            
+                    
+                    Introduction to TypeScript & Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../meeting-3/intro-angular.html">
+            
+                <a href="../meeting-3/intro-angular.html">
+            
+                    
+                    Introduction to Angular 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="components-advanced.html">
+            
+                <a href="components-advanced.html">
+            
+                    
+                    Complex Angular components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../meeting-5/services-propagation.html">
+            
+                <a href="../meeting-5/services-propagation.html">
+            
+                    
+                    Propagation of data and Intro to Services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../meeting-6/intro-rxjs.html">
+            
+                <a href="../meeting-6/intro-rxjs.html">
+            
+                    
+                    Observables & HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../meeting-7/routing.html">
+            
+                <a href="../meeting-7/routing.html">
+            
+                    
+                    Client-Side Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Complex Angular components</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="complex-angular-components">Complex Angular components</h1>
+<p>Welcome to lesson 4!</p>
+<h2 id="angular-cli">Angular CLI</h2>
+<p>We&apos;ve been writing everything from scratch for a while, and while it&apos;s great for small apps, it&apos;s not enough when we&apos;re trying to write more complex applications. 
+This is why we bring in <code>angular-cli</code>. The CLI is a <code>command-line-interface</code> that can automatically generate an angular app and components.
+It&apos;ll make our life a lot easier.</p>
+<h3 id="installation">Installation</h3>
+<p><code>npm install -g angular-cli # sudo for *nix</code></p>
+<h3 id="commands">Commands</h3>
+<p><code>ng new project-name # generates new project</code>
+<code>ng g component component-name # generates components</code>
+<code>ng serve # Builds and serves your project</code>
+<code>ng build # Builds your project and outputs to dist directory</code></p>
+<h3 id="new-project">New Project</h3>
+<p>Create a new project by typing <code>ng new villain-project</code>
+<code>ng serve</code></p>
+<h2 id="two-way-bindings">Two-Way Bindings</h2>
+<p>Remember how we said we could have one-way bindings? We can have two-way bindings as well!
+Create a new component called <code>villain-home</code>
+<code>ng g component vilain-home</code></p>
+<p>Let&apos;s add the title saying: <code>List of villains</code> to the template.</p>
+<p>We want to be able to add a new hero using an input box. That&apos;s great, but what if we want to bind to the component as we type?
+Easy. We use Two-Way Bindings.</p>
+<p>We use a <code>directive</code> called <code>NgModel</code>. A directive is something that allows you to manipulate the original behavior of an element. <code>NgModel</code> is what allows us to connect the input box to the component class.
+In your component template, add <code>&lt;input [(ngModel)]=&quot;villainName&quot;&gt;</code></p>
+<p>Also, don&apos;t forget to add <code>&lt;app-villain-home&gt;&lt;/app-villain-home&gt;</code> to your <code>AppComponent</code>&apos;s template.</p>
+<h2 id="on-click">On Click</h2>
+<p>We now want to submit the new villain name to the list of villains. We need a button to do this. Let&apos;s talk about On-Click events.</p>
+<ol>
+<li>Add a button to your villain-home component</li>
+<li>Add <code>(click)=&quot;addVillain()&quot;</code> as an attribute to your button</li>
+<li>Add the <code>addVillain</code> method to your <code>VillainHomeComponent</code></li>
+<li>Create a list of villains in your <code>VillainHomeComponent</code></li>
+<li>Create a member variable <code>villainName</code> to your <code>VillainHomeComponent</code> class</li>
+<li>Add the <code>villainName</code> to your list of villains</li>
+</ol>
+<pre><code class="lang-typescript"><span class="hljs-comment">/* villain-home.component.ts */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> VillainHomeComponent <span class="hljs-keyword">implements</span> OnInit {
+  villainName: <span class="hljs-built_in">string</span>;
+  villains: <span class="hljs-built_in">string</span>[] = [];
+  <span class="hljs-keyword">constructor</span>() { }
+
+  ngOnInit() {
+  }
+  addVillain() {
+    <span class="hljs-keyword">this</span>.villains.push(<span class="hljs-keyword">this</span>.villainName);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.villains);
+  }
+}
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--villain-home.component.html--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;villainName&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">&quot;addVillain()&quot;</span>&gt;</span>Add Villain<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<h2 id="scope">Scope</h2>
+<p>What if we put the button inside the <code>AppComponent</code>? Would it work?
+Let&apos;s try:</p>
+<pre><code class="lang-typescript">&lt;h1&gt;
+
+&lt;/h1&gt;
+&lt;app-villain-home&gt;&lt;/app-villain-home&gt;
+&lt;button (click)=&quot;addVillain()&quot;&gt;Add Villain&lt;/button&gt;
+</code></pre>
+<p>We get an error! <code>_co.addVillain is not a function</code></p>
+<p>This is because each component, regardless of its location, has its own scope and cannot access anything outside of it, unless that data is manually passed to the component.</p>
+<p>How do we pass data to the component?</p>
+<h2 id="angular-4-architecture">Angular 4 architecture</h2>
+<p>We have Smart Components and Dummy Components. Smart Components send information to Dummy Components. Dummy Components take that data, and do something to it, then send the data back.</p>
+<p>An example would be a TodoList. We&apos;d have a component for adding the todos, a component to list the todos and then a smart component to contain both of these, the TodoList component. The TodoList component&apos;s job is to get the initial data (from somewhere) and then send that info to the list of todos component. It&apos;s also supposed to get the new data from AddTodo&apos;s component and then send that updated list to the todos component.</p>
+<p>Visualized:
+<img src="images/architecture_diagram.png" alt="Angular 4 Architecture"></p>
+<h2 id="sending-data-from-parent-to-child-component">Sending data from parent to child component</h2>
+<p>This is actually relatively simple.
+In your component that&apos;s going to receive the data, add <code>@Input villains: string[]</code>
+Then, in the parent component (that will be sending the data), add the following:
+<code>&lt;app-villain-home [villains]=&quot;villainData&quot;&gt;&lt;/app-villain-home&gt;</code>
+where <code>villainData</code> will be data defined in your parent component.</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">/*AppComponent*/</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
+  ...
+  initialVillains = [<span class="hljs-string">&apos;Darth Vader&apos;</span>, <span class="hljs-string">&apos;Boba Fett&apos;</span>];
+}
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--app.component.html--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">app-villain-home</span> [<span class="hljs-attr">villains</span>]=<span class="hljs-string">&quot;initialVillains&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">app-villain-home</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> VillainHomeComponent <span class="hljs-keyword">implements</span> OnInit {
+  villainName: <span class="hljs-built_in">string</span>;
+  @Input() villains: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">//data received by parent component</span>
+  <span class="hljs-keyword">constructor</span>() { }
+  ...
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../meeting-3/intro-angular.html" class="navigation navigation-prev " aria-label="Previous page: Introduction to Angular 4">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../meeting-5/services-propagation.html" class="navigation navigation-next " aria-label="Next page: Propagation of data and Intro to Services">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Complex Angular components","level":"1.5","depth":1,"next":{"title":"Propagation of data and Intro to Services","level":"1.6","depth":1,"path":"meeting-5/services-propagation.md","ref":"meeting-5/services-propagation.md","articles":[]},"previous":{"title":"Introduction to Angular 4","level":"1.4","depth":1,"path":"meeting-3/intro-angular.md","ref":"meeting-3/intro-angular.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"meeting-4/components-advanced.md","mtime":"2017-08-31T15:46:16.978Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-20T18:06:21.778Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

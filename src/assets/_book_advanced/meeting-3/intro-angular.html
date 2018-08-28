@@ -1,0 +1,510 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Introduction to Angular 4 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../meeting-4/components-advanced.html" />
+    
+    
+    <link rel="prev" href="../meeting-2/intro-ts.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../meeting-1/meeting-1.html">
+            
+                <a href="../meeting-1/meeting-1.html">
+            
+                    
+                    Introduction & Build Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../meeting-2/intro-ts.html">
+            
+                <a href="../meeting-2/intro-ts.html">
+            
+                    
+                    Introduction to TypeScript & Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="intro-angular.html">
+            
+                <a href="intro-angular.html">
+            
+                    
+                    Introduction to Angular 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../meeting-4/components-advanced.html">
+            
+                <a href="../meeting-4/components-advanced.html">
+            
+                    
+                    Complex Angular components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../meeting-5/services-propagation.html">
+            
+                <a href="../meeting-5/services-propagation.html">
+            
+                    
+                    Propagation of data and Intro to Services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../meeting-6/intro-rxjs.html">
+            
+                <a href="../meeting-6/intro-rxjs.html">
+            
+                    
+                    Observables & HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../meeting-7/routing.html">
+            
+                <a href="../meeting-7/routing.html">
+            
+                    
+                    Client-Side Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Introduction to Angular 4</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="introduction-to-angular-4">Introduction to Angular 4</h1>
+<p>This lesson we&apos;ll go over Angular 4 basics!</p>
+<h2 id="why-angular-4">Why Angular 4?</h2>
+<ul>
+<li>Backed by Google</li>
+<li>Trusted by many important and reputable sites</li>
+<li>Latest version of Angular</li>
+<li>Based on TypeScript</li>
+<li>Stable Framework that allows you to do a lot of stuff</li>
+<li>Teaches good architectural lessons every developer should understand</li>
+<li>Introduces great build tools</li>
+</ul>
+<h2 id="what-can-angular-do">What can Angular do?</h2>
+<ul>
+<li>Write Complex web apps</li>
+<li>Nested client-side routing</li>
+<li>Template-Driven web apps</li>
+<li>Complex logic built into templates</li>
+<li>Built-In CSRF Support</li>
+<li>Built-In RxJS support<ul>
+<li>Observables</li>
+</ul>
+</li>
+<li>AND MORE!</li>
+</ul>
+<h2 id="component-based-applications">Component-Based Applications</h2>
+<p>Think of everything as a piece. Angular is made of small moving parts. All you need to do is make them work together.</p>
+<p>A <code>component</code> is basically a custom HTML element. is A component has two pieces the <code>template</code> and the <code>logic/class</code>. Each component has a class associated with it, and a template. The template is what is added to the DOM. The template is generally what you use to show things.</p>
+<h3 id="why-components">Why Components?</h3>
+<p>Components are reusable. For example, what if you have a component that you&apos;d like to use in multiple places such as an alert? You wouldn&apos;t want to copy and paste a hundred lines of code, would you? Of course not, you&apos;d want to just copy and paste the code in some places.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Enough Talk. Let&apos;s get started!
+First, <strong>Create a new project folder!</strong>
+Go ahead and use the same webpack config file in the <code>angular-project</code> folder <a href="angular-project/webpack.config.js">Here</a></p>
+<p>Next, create a <code>src</code> folder inside your project. Then, create a <code>main.ts</code> file inside and paste this:</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { platformBrowserDynamic } from <span class="hljs-string">&apos;@angular/platform-browser-dynamic&apos;</span>;
+<span class="hljs-keyword">import</span> { AppModule } from <span class="hljs-string">&apos;./app/app.module&apos;</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./polyfills&apos;</span>;
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+</code></pre>
+<p>Add this to your <code>polyfills.ts</code> file:</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;zone.js&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;reflect-metadata&apos;</span>;
+</code></pre>
+<p>We&apos;ll come back to this in a second.</p>
+<p>Next, create an <code>app</code> folder (inside <code>src</code>) and create a few files <code>app.component.ts</code> and <code>app.module.ts</code></p>
+<p>In <code>app.component.ts</code></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">&apos;@angular/core&apos;</span>;
+
+@Component({
+    template: <span class="hljs-string">`&lt;h1&gt; welcome to my angular app! &lt;/h1&gt;`</span>, <span class="hljs-comment">//template to show when using component</span>
+    selector: <span class="hljs-string">`app-component`</span> <span class="hljs-comment">//how to use this component in html: &lt;app-component&gt;&lt;/app-component&gt;</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
+}
+</code></pre>
+<h3 id="modules">Modules</h3>
+<p>Angular is based on a modular system to separate parts of code. 
+For example, you can create a new module just for storing common reused components and call the module <code>CommonModule</code> and just import it.</p>
+<p>Also, Angular deals with a main module and then imports other dependencies for the rest of the app to use.</p>
+<p>For example, if you have 5 separate modules, you need to have your main module import the other 5 to make sure your app works properly.</p>
+<p>In <code>app.module.ts</code> let&apos;s add some code:</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">/* Import Statements */</span>
+<span class="hljs-keyword">import</span> { NgModule } from <span class="hljs-string">&apos;@angular/core&apos;</span>;
+<span class="hljs-keyword">import</span> { BrowserModule } from <span class="hljs-string">&apos;@angular/platform-browser&apos;</span>;
+<span class="hljs-keyword">import</span> { FormsModule } from <span class="hljs-string">&apos;@angular/forms&apos;</span>;
+
+<span class="hljs-comment">/* Import Main Component */</span>
+<span class="hljs-keyword">import</span> { AppComponent } from <span class="hljs-string">&apos;./app.component&apos;</span>; <span class="hljs-comment">//Not written yet</span>
+
+@NgModule({ <span class="hljs-comment">//Tell Angular to create a module</span>
+    imports: [
+        BrowserModule, <span class="hljs-comment">// Module for creating angular web apps</span>
+        FormsModule <span class="hljs-comment">// Module to manipulate template</span>
+    ],
+    declarations: [ <span class="hljs-comment">// Components created by us</span>
+        AppComponent
+    ],
+    bootstrap: [ AppComponent ]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule { } <span class="hljs-comment">// Associate module with class</span>
+</code></pre>
+<h3 id="run-the-app">Run the app</h3>
+<p>To run the application, run webpack-dev-server!</p>
+<p><strong>Note: If you didn&apos;t install it already, install webpack-dev-server with <code>npm install -g webpack-dev-server</code> on *nix use <code>sudo npm install -g webpack-dev-server</code></strong></p>
+<h3 id="what-just-happened">What just happened?</h3>
+<p>High Level:</p>
+<ol>
+<li>We wrote code</li>
+<li>We ran webpack-dev-server</li>
+<li><code>webpack-dev-server</code> performs webpack bundling then watches your source files for any changes.</li>
+</ol>
+<p>More Specific:</p>
+<ul>
+<li>You have a main module and a main component</li>
+<li>Your main module(<code>AppModule</code>) imports your main component (<code>AppComponent</code>)</li>
+<li>Angular realizes that you want to use <code>AppComponent</code> and adds your component&apos;s template to the DOM.</li>
+<li><strong>Note: Wherever you have your component is where the component&apos;s template will be added</strong><ul>
+<li>Because we added the template to the index.html at the top of the body, the contents of the template were added to the DOM inside the body</li>
+</ul>
+</li>
+</ul>
+<h3 id="one-way-bindings">One-Way Bindings</h3>
+<p>Angular is based on an MVC model. MVC stands for <strong>Model View Controller</strong>. 
+The model is your data or the state of your application. View is what the user sees. Controller is what connects the model and view together. It&apos;s where most of the logic resides.</p>
+<p>In our application, the model would be data retrieved from the server or any information created/maintained by our Component. The controller would be our Component class. The View is your component&apos;s template.</p>
+<p>Because of this, Angular can have <em>one-way bindings</em>. You can reference variables used in your component class inside your template. </p>
+<p>For example, say I had a user&apos;s name stored in my <code>UserComponent</code> class. </p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">class</span> UserComponent {
+    userName = <span class="hljs-string">&quot;Bob&quot;</span>;
+}
+</code></pre>
+<p>If you wanted to, you could display that exact name in the template.</p>
+<pre><code class="lang-typescript">@Component({
+    template: <span class="hljs-string">`&lt;h1&gt;  &lt;/h1&gt;`</span>,
+    selector: <span class="hljs-string">&apos;user-component&apos;</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> UserComponent {
+    userName = <span class="hljs-string">&quot;Bob&quot;</span>;
+}
+</code></pre>
+<p>This is helpful for many reasons, but the main one is that you don&apos;t need to manually update your template through your TypeScript.</p>
+<p>Also, the double curly brace syntax is for binding. This means that that part of the template is <em>bound to</em> that variable in the Component class. In other words, when <code>userName</code> changes at any point, the header updates.</p>
+<pre><code class="lang-typescript">@Component({
+    template: <span class="hljs-string">`&lt;h1&gt;  &lt;/h1&gt;`</span>,
+    selector: <span class="hljs-string">&apos;user-component&apos;</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> UserComponent {
+    userName = <span class="hljs-string">&quot;Bob&quot;</span>;
+    <span class="hljs-keyword">constructor</span>() {
+        setTimeout(() =&gt; <span class="hljs-keyword">this</span>.userName = <span class="hljs-string">&quot;Not Bob!&quot;</span>, <span class="hljs-number">3000</span>);
+    }
+}
+</code></pre>
+<p>If you try this what happens?
+<strong><code>Bob</code> automatically changes to <code>Not Bob!</code> in the component class, and therefore the template gets updated along with it!</strong></p>
+<h2 id="creating-a-new-component">Creating a new component</h2>
+<p>Go ahead and create a new component inside the <code>app</code> directory.</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">&apos;@angular/core&apos;</span>;
+@Component({
+    template: <span class="hljs-string">`
+        &lt;h1&gt; Inner Component! &lt;/h1&gt;
+        &lt;h2&gt; My info: &lt;/h2&gt;
+        &lt;div&gt;  &lt;/div&gt;
+        &lt;div&gt;  &lt;/div&gt;
+    `</span>,
+    selector: <span class="hljs-string">&apos;inner-component&apos;</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> InnerComponent {
+    user = {
+        name: <span class="hljs-string">&quot;John&quot;</span>,
+        age: <span class="hljs-number">32</span>
+    }
+}
+</code></pre>
+<p>Now, if we wanted to start displaying this, how would we do it?</p>
+<p>Let&apos;s think about what we&apos;ve learned.</p>
+<ol>
+<li>Angular imports main module</li>
+<li>main module imports dependencies</li>
+<li>Angular bootstraps main component</li>
+<li>Component is used in index.html so template is put into the DOM there</li>
+</ol>
+<p>So, we want to add our inner component to our already existing app, right? And we want to put it below the template for our AppComponent, right? So why don&apos;t we just add the <code>&lt;inner-component&gt;&lt;/inner-component&gt;</code> inside the AppComponent template?</p>
+<pre><code class="lang-typescript">@Component({
+    template: <span class="hljs-string">`
+    &lt;h1&gt;  &lt;/h1&gt;
+    &lt;inner-component&gt;&lt;/inner-component&gt;
+    `</span>, <span class="hljs-comment">//template to show when using component</span>
+    ...
+})
+...
+</code></pre>
+<p>Try it!
+Wait, it didn&apos;t work! Angular didn&apos;t recognize the component! Well, that&apos;s because the component isn&apos;t associated with any module! Let&apos;s go add it:</p>
+<pre><code class="lang-typescript">...
+<span class="hljs-keyword">import</span> { InnerComponent } from <span class="hljs-string">&apos;./inner.component&apos;</span>; <span class="hljs-comment">//I named my file inner.component.ts</span>
+
+...
+declarations: [
+    AppComponent,
+    InnerComponent
+]
+...
+</code></pre>
+<p><strong>DONE!</strong></p>
+<p>Now try it!</p>
+<p><strong>TL;DR If you want to use a component(<code>Component 2</code>) inside another one(<code>Component 1</code>), add the inner component to the outer component&apos;s template (put <code>Component 2</code> in <code>Component 1</code>&apos;s template)!</strong></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../meeting-2/intro-ts.html" class="navigation navigation-prev " aria-label="Previous page: Introduction to TypeScript & Modules">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../meeting-4/components-advanced.html" class="navigation navigation-next " aria-label="Next page: Complex Angular components">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introduction to Angular 4","level":"1.4","depth":1,"next":{"title":"Complex Angular components","level":"1.5","depth":1,"path":"meeting-4/components-advanced.md","ref":"meeting-4/components-advanced.md","articles":[]},"previous":{"title":"Introduction to TypeScript & Modules","level":"1.3","depth":1,"path":"meeting-2/intro-ts.md","ref":"meeting-2/intro-ts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"meeting-3/intro-angular.md","mtime":"2017-08-31T15:52:01.001Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-20T18:06:21.778Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,22 @@
+#section04 {
+  background-color: black;
+  height: 10%;
+  text-align: center;
+}
+
+.footer {
+  font-size: 1em;
+  position: relative;
+  padding: 1.9vh;
+  color: #bfbfbf;
+}
+
+.footer a:hover {
+  color: #bfbfbf;
+  text-decoration: none;
+}
+
+#footerimg {
+  height: 22px;
+}
+

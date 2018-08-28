@@ -1,18 +1,13 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from "@angular/router";
-
-import { HomeComponent } from "./home/home.component";
-import { CalendarComponent } from "./calendar/calendar.component";
-import { TracksComponent } from "./tracks/tracks.component";
-import { FaqComponent } from "./faq/faq.component";
-
+import { RouterModule, Routes } from "@angular/router";
+import { HomeComponent } from './home/home.component';
 
 export const APP_ROUTES: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'tracks', component: TracksComponent },
-  { path: 'calendar', component: CalendarComponent },
-  { path: 'faq', component: FaqComponent }
+  { path: 'home', component:  HomeComponent },
+  { path: 'tracks', loadChildren: './tracks/tracks.module#TracksModule' },
+  { path: 'calendar', loadChildren: './calendar/calendar.module#CalendarModule' },
+  { path: 'faq', loadChildren: './faq/faq.module#FaqModule' }
 ];
 
 @NgModule({

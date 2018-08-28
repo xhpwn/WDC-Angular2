@@ -1,0 +1,28 @@
+{
+  "name": "2017-beginner-gitbook",
+  "version": "0.1.0",
+  "description": "Gitbook for 2017 WDC Beginner Track",
+  "main": "deploy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/purduewebdevclub/2017-Beginner-Gitbook.git"
+  },
+  "author": "Maneesh Tewani <maneesh.tewani@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/purduewebdevclub/2017-Beginner-Gitbook/issues"
+  },
+  "homepage": "https://github.com/purduewebdevclub/2017-Beginner-Gitbook#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "markdown": "^0.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.1.1",
+    "eslint-config-es2015": "^1.1.0",
+    "eslint-config-google": "^0.8.0"
+  }
+}

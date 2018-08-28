@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "7.10.0"
+before_script:
+  - npm install -g gitbook-cli@2.3.0
+install:
+  - npm install
+script:
+  - node generate-summary.js -a
+  - gitbook build
