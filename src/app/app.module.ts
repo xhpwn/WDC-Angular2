@@ -19,7 +19,7 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
