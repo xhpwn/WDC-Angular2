@@ -1,0 +1,19 @@
+#header {
+    padding-top: 80px;
+    padding-bottom: 2em;
+    background-color: #f0f0f0;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+.subsection {
+    margin: 2em 0;
+}
+
+@media (min-width: 991.98px) {
+    .container {
+        max-width: 50%;
+    }
+}
