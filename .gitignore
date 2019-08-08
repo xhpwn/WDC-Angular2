@@ -2,3 +2,5 @@ node_modules/
 dist/
 firebase.json
 .firebaserc
+.DS_Store
+.firebase
